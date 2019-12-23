@@ -46,24 +46,34 @@ const sock = 9;
 const input1 = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3];
 const sock1 = 10;
 
-const input2 = [1, 1, 2, 2, 3];
-const sock2 = 5;
+const input2 = [1, 1, 2, 2, 3, 1, 1];
+const sock2 = 7;
 
 function sockMerchant(n, ar) {
   let pares = 0;
-  for (let i = 0; i < n; i++) {
-    for (let e = 1; e < n; e++) {
-      console.log(`valore de i ${ar[i]}
-               valores de e ${ar[e]}`);
-      if (ar[i] === ar[e]) {
-        pares += 1;
-      }
+  for (let i = 0; i < n; i += 1) {
+    debugger;
+    if (ar[i] === ar[i + 1]) {
+      pares++;
     }
-    if (pares % 2 != 0) {
-      let valor = n % pares;
-      return pares - valor;
-    }
-    return pares;
   }
+  return pares;
+  // let valores = ar.reduce((accumulator, currentValue, currentIndex) => {
+  //   // console.log(
+  //   //   `Àccumulator ${accumulator} currentValue ${currentValue}  currentIndex ${currentIndex}`
+  //   // );
+  // });
+  // for (let i = 0; i < n; i++) {
+  //   for (let e = 1; e < n; e++) {
+  //     // debugger;
+  //     console.log(`valore de i ${i} <br>
+  //     valores de e ${e}<br>`);
+  //     if (ar[i] === ar[e]) {
+  //       pares++;
+  //     }
+  //   } // fin del segundo for
+  //   return pares;
+  // } // fin del primer for
+  // return valores;
 }
 console.log(sockMerchant(sock2, input2));
