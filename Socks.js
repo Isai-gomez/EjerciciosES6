@@ -51,29 +51,16 @@ const sock2 = 7;
 
 function sockMerchant(n, ar) {
   let pares = 0;
+  const ordenar = ar.sort((a, b) => a - b);
+
   for (let i = 0; i < n; i += 1) {
-    debugger;
-    if (ar[i] === ar[i + 1]) {
+    if (ordenar[i] === ordenar[i + 1]) {
       pares++;
     }
   }
-  return pares;
-  // let valores = ar.reduce((accumulator, currentValue, currentIndex) => {
-  //   // console.log(
-  //   //   `Àccumulator ${accumulator} currentValue ${currentValue}  currentIndex ${currentIndex}`
-  //   // );
-  // });
-  // for (let i = 0; i < n; i++) {
-  //   for (let e = 1; e < n; e++) {
-  //     // debugger;
-  //     console.log(`valore de i ${i} <br>
-  //     valores de e ${e}<br>`);
-  //     if (ar[i] === ar[e]) {
-  //       pares++;
-  //     }
-  //   } // fin del segundo for
-  //   return pares;
-  // } // fin del primer for
-  // return valores;
+  if (pares % 2 != 0) {
+    pares -= pares % 2;
+  }
+  return pares / 2;
 }
-console.log(sockMerchant(sock2, input2));
+console.log(sockMerchant(sock1, input1));
