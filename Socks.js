@@ -58,19 +58,23 @@ function sockMerchant(n, ar) {
   for (let i = 0; i < n; i++) {
     // recorrer el ordenar
     if (ordenar[i] === ordenar[i + 1]) {
-      debugger;
       // contar si el número se repite
       pares[i] = ordenar[i];
       pares[i + 1] = ordenar[i + 1];
     }
   }
-  //si el némero no espar le resto el recidúo
+  //si el tamaño no espar le resto el recidúo
   if (pares.length % 2 != 0) {
     pares.length -= pares.length % 2;
+    return pares.length / 2;
   }
-  // console.log(pares);
+  const paresE = pares.filter(element => element != undefined);
+  console.log(paresE);
+  if (paresE.length % 2 != 0) {
+    paresE.length -= paresE.length % 2;
+  }
+  return paresE.length / 2;
+  //return pares.length / 2;
   //divido para tener el número de pares
-  console.log(pares);
-  return pares.length / 2;
 }
-console.log(sockMerchant(sock2, input2));
+console.log(sockMerchant(sock, input));
