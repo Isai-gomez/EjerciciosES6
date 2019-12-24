@@ -61,6 +61,7 @@ function sockMerchant(n, ar) {
       debugger;
       // contar si el número se repite
       pares[i] = ordenar[i];
+      pares[i + 1] = ordenar[i + 1];
     }
   }
   //si el némero no espar le resto el recidúo
@@ -69,6 +70,7 @@ function sockMerchant(n, ar) {
   }
   // console.log(pares);
   //divido para tener el número de pares
+  console.log(pares);
   return pares.length / 2;
 }
-console.log(sockMerchant(sock, input));
+console.log(sockMerchant(sock2, input2));
