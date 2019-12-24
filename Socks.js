@@ -54,9 +54,9 @@ function sockMerchant(n, ar) {
   let pares = []; // Almacen de numeros repetidos
   const ordenar = ar.sort((a, b) => a - b); //ordenar el array de menor a mayor
   for (let i = 0; i < n; i++) {
-    // Recorrer el ordenar
+    // Recorrer el array ordenar
     if (ordenar[i] === ordenar[i + 1]) {
-      // Contar si el número se repite
+      // Almacenar si el número se repite
       pares[i] = ordenar[i];
       pares[i + 1] = ordenar[i + 1];
     }
