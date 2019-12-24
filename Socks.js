@@ -41,37 +41,36 @@ Sample Output
 
 3
 */
-//Entradas
+//Entrada
 const input = [10, 20, 20, 10, 10, 30, 50, 10, 20]; //pares = 3
 const sock = 9;
 const input1 = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3, 3, 1]; //pares = 5
 const sock1 = 12;
 const input2 = [1, 1, 2, 2, 3, 1, 1]; // pares = 3
 const sock2 = 7;
-//Funcion para buscar pares de números
-function sockMerchant(n, ar) {
-  let pares = []; // contar número
-  const ordenar = ar.sort((a, b) => a - b); //ordenar el array de menor a mayor
 
+//Funcion para buscar pares de números en un array. Proceso
+function sockMerchant(n, ar) {
+  let pares = []; // Almacen de numeros repetidos
+  const ordenar = ar.sort((a, b) => a - b); //ordenar el array de menor a mayor
   for (let i = 0; i < n; i++) {
-    // recorrer el ordenar
+    // Recorrer el ordenar
     if (ordenar[i] === ordenar[i + 1]) {
-      // contar si el número se repite
+      // Contar si el número se repite
       pares[i] = ordenar[i];
       pares[i + 1] = ordenar[i + 1];
     }
   }
-
-  //eliminar los valores undefined
+  // Eliminar los valores undefined
   const paresE = pares.filter(element => element != undefined);
-  // si el tamaño es impar le resto el residuo
+  // Si el tamaño es impar le resto el residuo
   if (paresE.length % 2 != 0) {
     paresE.length -= paresE.length % 2;
   }
-  //devolver los pare de numeros
+  //Devolver los pares de numeros. Salida
   return paresE.length / 2;
 }
-// tes del funcionamiento
+// Test del funcionamiento
 const test = sockMerchant(sock, input);
 const test1 = sockMerchant(sock1, input1);
 const test2 = sockMerchant(sock2, input2);
