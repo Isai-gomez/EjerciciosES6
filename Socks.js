@@ -50,17 +50,25 @@ const input2 = [1, 1, 2, 2, 3, 1, 1];
 const sock2 = 7;
 
 function sockMerchant(n, ar) {
-  let pares = 0;
-  const ordenar = ar.sort((a, b) => a - b);
+  let pares = []; // contar número
 
-  for (let i = 0; i < n; i += 1) {
+  const ordenar = ar.sort((a, b) => a - b); //ordenar el array de menor a mayor
+  console.log(ordenar);
+
+  for (let i = 0; i < n; i++) {
+    // recorrer el ordenar
     if (ordenar[i] === ordenar[i + 1]) {
-      pares++;
+      debugger;
+      // contar si el número se repite
+      pares[i] = ordenar[i];
     }
   }
-  if (pares % 2 != 0) {
-    pares -= pares % 2;
+  //si el némero no espar le resto el recidúo
+  if (pares.length % 2 != 0) {
+    pares.length -= pares.length % 2;
   }
-  return pares / 2;
+  // console.log(pares);
+  //divido para tener el número de pares
+  return pares.length / 2;
 }
-console.log(sockMerchant(sock1, input1));
+console.log(sockMerchant(sock, input));
