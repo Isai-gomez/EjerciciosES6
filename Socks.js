@@ -41,19 +41,17 @@ Sample Output
 
 3
 */
-const input = [10, 20, 20, 10, 10, 30, 50, 10, 20];
+//Entradas
+const input = [10, 20, 20, 10, 10, 30, 50, 10, 20]; //pares = 3
 const sock = 9;
-const input1 = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3];
-const sock1 = 10;
-
-const input2 = [1, 1, 2, 2, 3, 1, 1];
+const input1 = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3, 3, 1]; //pares = 5
+const sock1 = 12;
+const input2 = [1, 1, 2, 2, 3, 1, 1]; // pares = 3
 const sock2 = 7;
-
+//Funcion para buscar pares de números
 function sockMerchant(n, ar) {
   let pares = []; // contar número
-
   const ordenar = ar.sort((a, b) => a - b); //ordenar el array de menor a mayor
-  console.log(ordenar);
 
   for (let i = 0; i < n; i++) {
     // recorrer el ordenar
@@ -63,18 +61,20 @@ function sockMerchant(n, ar) {
       pares[i + 1] = ordenar[i + 1];
     }
   }
-  //si el tamaño no espar le resto el recidúo
-  if (pares.length % 2 != 0) {
-    pares.length -= pares.length % 2;
-    return pares.length / 2;
-  }
+
+  //eliminar los valores undefined
   const paresE = pares.filter(element => element != undefined);
-  console.log(paresE);
+  // si el tamaño es impar le resto el residuo
   if (paresE.length % 2 != 0) {
     paresE.length -= paresE.length % 2;
   }
+  //devolver los pare de numeros
   return paresE.length / 2;
-  //return pares.length / 2;
-  //divido para tener el número de pares
 }
-console.log(sockMerchant(sock, input));
+// tes del funcionamiento
+const test = sockMerchant(sock, input);
+const test1 = sockMerchant(sock1, input1);
+const test2 = sockMerchant(sock2, input2);
+if (test === 3 && test1 === 5 && test2 === 3) {
+  console.log("Funciona bien has resuelto el problema gacias.... {; (-.-)");
+}
