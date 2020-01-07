@@ -7,7 +7,7 @@ puede sacar clones para no afectar aha todos.
 /*Cómo usar con los string*/
 const string = "Contengo caracteres";
 // const operator = [...string].map(element => element + "*");
-const operator = [...string];
+//const operator = [...string];
 // console.log(operator);
 // console.log(string);
 
