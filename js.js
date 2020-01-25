@@ -12,12 +12,15 @@ Obteniendo los dos totales se suman y se divide entre 2 returnando el resultado.
 */
 //entrada
 const input = [4, [5, 2, 5, 1], [1, 5, 3, 1], [5, 2, 5, 1], [5, 3, 5, 1]];
+const input1 = [2,[1,2],[1,3]];
+console.log(input1)
 
 //Almacenar la suma de cada elemnto en diagonal
-let firstLine = 0;
-let secontLine = 0;
+
 // Hacer la media entre los dos totales.
 function mediaMatrix(ars) {
+    let firstLine = 0;
+    let secontLine = 0;
   for (let i = 1; i <= ars[0]; i++) {
     firstLine += ars[i][i - 1];
   }
@@ -26,4 +29,5 @@ function mediaMatrix(ars) {
   }
   return (firstLine + secontLine) / 2;
 }
-console.log(` valor de la function ${mediaMatrix(input)}`);
+
+console.log(` valor de la function ${mediaMatrix(input1)}`);
