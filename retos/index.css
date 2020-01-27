@@ -1,4 +1,24 @@
 .wrapher{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.wrapher > div{
+    width: 50%;
     display: flex;
     flex-direction: column;
+    margin-left: 2em;
+    
+}
+.respuesta{
+    background-color: rgba(134, 134, 212, 0.431);
+    margin-top: 5em;
+}
+div :nth-child(odd){
+    margin: 1em;
+}
+.description{
+    font-size: 20px;
+    color: coral;
+    text-align: center;
 }
