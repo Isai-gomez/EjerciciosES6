@@ -1,0 +1,4 @@
+.wrapher{
+    display: flex;
+    flex-direction: column;
+}
